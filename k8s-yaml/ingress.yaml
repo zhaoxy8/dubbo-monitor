@@ -1,0 +1,14 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata: 
+  name: dubbo-monitor
+  namespace: infra
+spec:
+  rules:
+  - host: dubbo-monitor.od.com
+    http:
+      paths:
+      - path: /
+        backend: 
+          serviceName: dubbo-monitor
+          servicePort: 8080
